@@ -27,9 +27,9 @@ footer {
 
 .weather-container {
   background-color: rgba(255, 255, 255, 1);
-  padding: 20px;
+  padding: 30px;
   width: 600px;
-  margin: 0 auto;
+  margin: 50px auto;
   border-radius: 20px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
