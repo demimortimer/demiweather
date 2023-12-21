@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Demi's Weather App</title>
   </head>
   <body>
@@ -29,7 +30,7 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class="weather-app-city" id="city">Paris</h1>
+            <h1 class="weather-app-city" id="city"></h1>
 
             <p class="weather-app-details">
               Wednesday 20:30, overcast clouds <br />
@@ -38,15 +39,23 @@
           </div>
           <div class="weather-app-right">
             <div class="weather-info-icon">☁️</div>
-            <div class="weather-info-temp">9</div>
+            <div class="weather-info-temp" id="weather-info-temp"></div>
             <div class="weather-info-unit">°C</div>
           </div>
         </div>
       </main>
       <footer>
-        This project was coded by <a href="">Demi Mortimer</a>, is
-        <a href="">open-sourced on GitHub</a> and
-        <a href="">hosted on Netlify</a>.
+        This project was coded by
+        <a href="https://github.com/demimortimer" target="_blank"
+          >Demi Mortimer</a
+        >, is
+        <a href="https://github.com/demimortimer/demiweather" target="_blank"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a href="https://demi-weather-app.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >.
       </footer>
     </div>
     <script src="src/index.js"></script>
