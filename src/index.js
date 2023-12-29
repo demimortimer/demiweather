@@ -1,6 +1,4 @@
 function refreshWeather(response) {
-  console.log(response.data);
-
   let temperatureElement = document.querySelector("#weather-info-temp");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
@@ -19,6 +17,8 @@ function refreshWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   timeElement.innerHTML = formatDate(date);
   weatherIcon.innerHTML = `<img src=${response.data.condition.icon_url}>`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -59,3 +59,41 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("London");
+
+function getForecast(city) {
+  let apiKey = "31044e85dc6dotb5a7ff80ae77ab2504";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+    <div class="forecast-day">
+      <div class="forecast-date">${day}</div>
+      <img
+        src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
+        alt=""
+        width="42"
+      />
+      <div class="forecast-temps">
+        <span class="forecast-temps-high">18°</span>
+        <span class="forecast-temps-low">12°</span>
+      </div>
+    </div>
+  `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
+getForecast("London");
+displayForecast();

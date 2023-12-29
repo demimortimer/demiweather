@@ -89,3 +89,28 @@ footer {
   font-weight: 900;
   font-size: 24px;
 }
+
+.forecast-data {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forecast-date {
+  font-size: 16px;
+  color: #57385c;
+  font-weight: bold;
+}
+
+.forecast-temps-high {
+  color: rgba(167, 82, 101, 1);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.forecast-temps-low {
+  color: rgba(167, 82, 101, 0.7);
+  font-weight: bold;
+  font-size: 13px;
+}
